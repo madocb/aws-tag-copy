@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#Script to copy tags from one aws resource to another
-#Usage is aws-tag-copy <src-resource-id> <dst-resource-id>
+# Script to copy tags from one aws resource to another
+# Usage is aws-tag-copy <src-resource-id> <dst-resource-id>
 #
 # Madoc Batters May-2018
 #
