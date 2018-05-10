@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#Script to copy tags from one aws resource to another
+#Usage is aws-tag-copy <src-resource-id> <dst-resource-id>
+#
+# Madoc Batters May-2018
+#
+
+if [ -z "$2" ]; then
+   echo "You need to enter at least two resources:  aws-tag-copy <src-resource-id> <dst-resource-id>"
+   echo
+   exit 1
+fi
+
+srcid="$1"
+dstid="$2"
+
+echo "Copying tags from $srcid to $dstid"
+
+aws ec2 describe-tags --filters "Name=resource-id,Values=$srcid" | sed '/Resource/d' > tmptaglist.json
+aws ec2 create-tags --resources $dstid --cli-input-json  file://"$PWD"/tmptaglist.json
