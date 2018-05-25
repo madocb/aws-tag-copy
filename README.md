@@ -9,6 +9,6 @@ As above.
 ## What use is this to me:
 - Great for fast duplication of tags between resources.
 
-## How do I use dup-ip:
+## How do I use aws-tag-copy:
 - Within a linux host with AWS CLI installed run as follows:
 - aws-tag-copy.sh <src-resource-id> <dst-resource-id>
